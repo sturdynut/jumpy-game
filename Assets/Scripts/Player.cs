@@ -89,4 +89,13 @@ public class Player : MonoBehaviour
             superJumps++;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("CrushyBox"))
+        {
+            Destroy(collision.gameObject);
+            superJumps += 5;
+        }
+    }
 }
